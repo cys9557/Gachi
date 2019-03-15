@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.irin.gachi">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_stat_name"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_stat_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity
+            android:name=".IntroActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".IntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PurposeActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WhereActivity"
+            android:parentActivityName=".PurposeActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".WaitingActivity" android:parentActivityName=".WhereActivity" android:screenOrientation="portrait" />
+        <activity android:name=".WhatActivity" android:parentActivityName=".WhereActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ChatActivity" android:parentActivityName=".WaitingActivity" android:screenOrientation="portrait" />
+        <activity android:name=".MapActivity" android:parentActivityName=".WhatActivity" android:screenOrientation="portrait" />
+        <activity android:name=".FoodActivity" android:parentActivityName=".WhatActivity" android:screenOrientation="portrait" />
+        <activity android:name=".FacilityActivity" android:parentActivityName=".WhatActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ShareActivity" android:parentActivityName=".WhatActivity" android:screenOrientation="portrait" ></activity>
+    </application>
+
+</manifest>

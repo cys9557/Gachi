@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="location_ski">
+        <item>비발디파크</item>
+        <item>곤지암 리조트</item>
+        <item>지산 리조트</item>
+        <item>용평 리조트</item>
+        <item>휘닉스 파크</item>
+        <item>하이원 리조트</item>
+        <item>엘리시안 강촌</item>
+        <item>베어스 타운</item>
+        <item>스타힐 리조트</item>
+        <item>오크밸리</item>
+        <item>무주 리조트</item>
+        <item>에덴밸리</item>
+        <item>양지파인</item>
+        <item>알펜시아</item>
+    </string-array>
+
+    <string-array name="location_waterpark">
+        <item>캐리비안베이</item>
+        <item>오션월드</item>
+    </string-array>
+
+    <string-array name="location_themepark">
+        <item>롯데월드</item>
+        <item>애버랜드</item>
+    </string-array>
+
+</resources>

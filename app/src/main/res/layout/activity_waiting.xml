@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WaitingActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00">
+
+        <Button
+            android:id="@+id/btn_makeroom"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#FFFFFF"
+            android:text="방만들기"
+            android:textColor="#000000"
+            android:layout_marginRight="16dp"
+            android:onClick="clickMakeroom"/>
+
+        <Button
+            android:id="@+id/btn_filter"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#FFFFFF"
+            android:text="필터"
+            android:textColor="#000000"
+            android:layout_marginRight="16dp"
+            android:onClick="clickFilter"/>
+
+        <ImageView
+            android:id="@+id/myinform"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:src="@drawable/myinform"
+            android:clickable="true"
+            android:onClick="clickMyinform"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/listview_waiting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:stackFromBottom="true">
+    </ListView>
+
+
+
+</RelativeLayout>

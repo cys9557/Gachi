@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "574910467231",
+    "firebase_url": "https://gachi-d6ce3.firebaseio.com",
+    "project_id": "gachi-d6ce3",
+    "storage_bucket": "gachi-d6ce3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574910467231:android:c4d1384de1ea220b",
+        "android_client_info": {
+          "package_name": "com.irin.gachi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574910467231-07enjbd1plh4mr2sj4auvl1ujn1b6fg1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.irin.gachi",
+            "certificate_hash": "274f3082d9462756bebb2eac806bf1f604556890"
+          }
+        },
+        {
+          "client_id": "574910467231-gfto42gb81of5205rlafdt3qom5ajpum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ1Mu-GMU0KK0kPp4f8zYh3LMgT5AyrnI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574910467231-gfto42gb81of5205rlafdt3qom5ajpum.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

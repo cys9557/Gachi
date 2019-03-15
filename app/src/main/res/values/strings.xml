@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Gachi</string>
+    <string name="spinner_prompt">위치</string>
+</resources>
