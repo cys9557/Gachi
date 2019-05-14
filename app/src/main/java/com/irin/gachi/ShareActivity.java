@@ -46,8 +46,6 @@ public class ShareActivity extends AppCompatActivity {
     int intdata;
     String data;
 
-    int view;
-
     Toolbar toolbar;
 
     ListView listView;
@@ -72,6 +70,15 @@ public class ShareActivity extends AppCompatActivity {
     DatabaseReference shareRef;
     DatabaseReference shareNumber;
     DatabaseReference roomRef;
+
+    String title;
+    String nickname;
+    String profileimage;
+    String text;
+    String picture;
+    String reply;
+    String time;
+    int view;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -153,11 +160,31 @@ public class ShareActivity extends AppCompatActivity {
 
                 item = members.get(position);
 
-                item.view++;
                 ShareItem member= members.get(position);
+
+                Intent intent= new Intent(ShareActivity.this, PostActivity.class);
+
+                intent.putExtra("title", members.get(position).title);
+                intent.putExtra("nickname", members.get(position).nickname);
+                intent.putExtra("profileimage", members.get(position).profileimage);
+                intent.putExtra("text", members.get(position).text);
+                intent.putExtra("picture", members.get(position).picture);
+                intent.putExtra("reply", members.get(position).reply);
+                intent.putExtra("time", members.get(position).time);
+                intent.putExtra("view", members.get(position).view);
+
+
+                startActivity(intent);
+
+                item.view++;
+
                 shareRef.child(members.size()-position-1+"").child("view").setValue(item.view);
 
                 shareAdapter.notifyDataSetChanged();
+
+
+
+
 
 
             }
@@ -234,16 +261,27 @@ public class ShareActivity extends AppCompatActivity {
 
                                 editor.commit();
 
-                                String title= addshare_title.getText().toString();
-                                String nickname= G.nickName;
-                                String picture= G.addPicture;
-                                String reply= "0\n댓글";
-                                Calendar calendar= Calendar.getInstance();
-                                String time= calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE);
+                                title= addshare_title.getText().toString();
+                                nickname= G.nickName;
+                                profileimage= G.profileUrl;
+                                text= addshare_text.getText().toString();
+                                picture= G.addPicture;
+                                reply= "0\n댓글";
+//                                Calendar calendar= Calendar.getInstance();
+
+                                // 현재시간을 msec 으로 구한다.
+                                long now = System.currentTimeMillis();
+                                // 현재시간을 date 변수에 저장한다.
+                                Date date = new Date(now);
+                                // 시간을 나타냇 포맷을 정한다 ( yyyy/MM/dd 같은 형태로 변형 가능 )
+                                SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy.MM.dd. HH:mm");
+                                // nowDate 변수에 값을 저장한다.
+                                time = sdfNow.format(date);
+                                //String time= calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE);
                                 int view= 0;
 
                                 //메세지를 Firebase DB 에 객체 통째로 저장
-                                item= new ShareItem(title, nickname, picture, reply, time, view);
+                                item= new ShareItem(title, nickname, profileimage, text, picture, reply, time, view);
                                 //roomRef.setValue()
                                 //'room'노드에 객체 통째로 값 추가(push)
                                 //shareRef.push().setValue(shareItem);
@@ -251,6 +289,8 @@ public class ShareActivity extends AppCompatActivity {
 
                                 roomRef.child("title").setValue(title);
                                 roomRef.child("nickname").setValue(nickname);
+                                roomRef.child("profileimage").setValue(profileimage);
+                                roomRef.child("text").setValue(text);
                                 roomRef.child("picture").setValue(picture);
                                 roomRef.child("reply").setValue(reply);
                                 roomRef.child("time").setValue(time);
@@ -268,6 +308,8 @@ public class ShareActivity extends AppCompatActivity {
                 });
 
                 dialog.dismiss();
+
+
 
             }
         });

@@ -1,5 +1,6 @@
 package com.irin.gachi;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,9 @@ public class ShareAdapter extends BaseAdapter {
         ShareItem member= members.get(position);
 
         TextView title= convertView.findViewById(R.id.item_tv_title);
+        ImageView profileimage= convertView.findViewById(R.id.profileimage);
         TextView nickname= convertView.findViewById(R.id.item_tv_id);
+        TextView text= convertView.findViewById(R.id.item_tv_text);
         TextView time= convertView.findViewById(R.id.time);
         ImageView picture= convertView.findViewById(R.id.item_iv);
         TextView reply= convertView.findViewById(R.id.reply);
@@ -59,7 +62,9 @@ public class ShareAdapter extends BaseAdapter {
 
         title.setText(member.title);
         nickname.setText(member.nickname);
+        Glide.with(convertView).load(member.profileimage).into(profileimage);
         time.setText(member.time);
+        text.setText(member.text+"");
         Glide.with(convertView).load(member.picture).into(picture);
         reply.setText(member.reply);
         view.setText(member.view+"");

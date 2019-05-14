@@ -4,6 +4,8 @@ public class ShareItem {
 
     String title;
     String nickname;
+    String profileimage;
+    String text;
     String picture;
     String reply;
     String time;
@@ -12,15 +14,29 @@ public class ShareItem {
     public ShareItem() {
     }
 
-    public ShareItem(String title, String nickname, String picture, String reply, String time, int view) {
+    public ShareItem(String title, String nickname, String profileimage, String text, String picture, String reply, String time, int view) {
         this.title = title;
         this.nickname = nickname;
+        this.profileimage = profileimage;
+        this.text = text;
         this.picture = picture;
         this.reply = reply;
         this.time = time;
         this.view = view;
 
     }
+
+    public String getProfileimage() {
+        return profileimage;
+    }
+
+    public void setProfileimage(String profileimage) {
+        this.profileimage = profileimage;
+    }
+
+    public String getText() { return text; }
+
+    public void setText(String text) { this.text = text; }
 
     public String getTitle() {
         return title;

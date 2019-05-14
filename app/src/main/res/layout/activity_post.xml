@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00">
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/item_tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TITLE"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="#000000"
+
+                android:gravity="center_vertical"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/item_iv_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@id/item_tv_title"/>
+
+            <TextView
+                android:id="@+id/item_tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FF222222"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@id/item_tv_title"
+                android:layout_toRightOf="@id/item_iv_profile"/>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:00"
+                android:layout_toRightOf="@id/item_iv_profile"
+                android:layout_below="@id/item_tv_id"
+                android:textColor="#FF222222"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="8dp" />
+
+            <ImageView
+                android:id="@+id/eye"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/eye"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@id/item_tv_id"
+                android:layout_toRightOf="@id/tv_time"/>
+
+            <TextView
+                android:id="@+id/num_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_tv_id"
+                android:layout_toRightOf="@id/eye"
+                android:text="100"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:textColor="#FF222222"/>
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="10dp"
+                android:layout_below="@id/item_iv_profile"
+                android:background="#000000">
+            </View>
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_irini"
+                android:layout_below="@id/line"/>
+
+            <TextView
+                android:id="@+id/item_tv_text"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:text="본문"
+                android:textSize="16sp"
+                android:layout_below="@+id/iv_add"/>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

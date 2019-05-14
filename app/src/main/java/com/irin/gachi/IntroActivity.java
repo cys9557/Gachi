@@ -27,7 +27,7 @@ public class IntroActivity extends AppCompatActivity {
         iv.startAnimation(ani);
 
         //스케줄 등록
-        timer.schedule(task,2000); //4초후에 task 객체가 start()
+        timer.schedule(task,2000); //2초후에 task 객체가 start()
     }
 
     //멤버변수 위치

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".WaitingActivity">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -42,7 +43,6 @@
             android:src="@drawable/myinform"
             android:clickable="true"
             android:onClick="clickMyinform"/>
-
     </android.support.v7.widget.Toolbar>
 
     <ListView
